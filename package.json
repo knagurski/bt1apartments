@@ -1,0 +1,30 @@
+{
+  "name": "bt1apartments",
+  "version": "1.0.0",
+  "description": "BT1 Apartments",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://knagurski@github.com/knagurski/bt1apartments.git"
+  },
+  "author": "Kevin Nagurski <knagurski@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knagurski/bt1apartments/issues"
+  },
+  "homepage": "https://github.com/knagurski/bt1apartments#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-modulizr": "0.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-svg2png": "^0.3.0",
+    "gulp-uglifycss": "^1.0.5",
+  }
+}
