@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="apartment" id="{{ page.permalink | remove: '/' }}">
+    <header class="header">
+        <div class="container">
+            <h1 class="title">{{ page.title | escape}}</h1>
+            {% include apartment-nav.html %}
+        </div>
+    </header>
+
+    {{ content }}
+
+    <div class="content-foot">
+        <div class="container">
+            {% include apartment-booking.html %}
+            {% include apartment-map.html %}
+        </div>
+    </div>
+</article>

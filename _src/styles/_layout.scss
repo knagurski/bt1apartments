@@ -1,0 +1,28 @@
+.container {
+  padding: 0 $padding;
+}
+@media only screen
+  and (max-width: $breakpointMedium) {
+  .container {
+    width: auto;
+    margin: 0;
+  }
+}
+@media only screen
+  and (min-width: $breakpointMedium) {
+  .container {
+    width: $breakpointMedium;
+    margin: 0 auto;
+  }
+}
+@media only screen
+  and (min-width: $breakpointLarge) {
+  .container {
+    width: $breakpointLarge;
+    margin: 0 auto;
+  }
+}
+
+@import "header";
+@import "content";
+@import "footer";

@@ -1,0 +1,26 @@
+#titanicquarter {
+  &:before {
+    background-image: url(../images/titanicquarter.jpg);
+    background-size: cover;
+    background-position: 0 50%;
+  }
+
+  #area {
+    background: linear-gradient(to right, transparentize($textColor, .1) 40%, transparentize($textColor, 1) 70%), url(../images/titanicquarter-area.jpg);
+    background-position: left, right;
+    background-size: auto, cover;
+    color: invert($textColor);
+
+    .container {
+      p {
+        width: 50%;
+      }
+    }
+  }
+
+  #services {
+    background: linear-gradient(to right, transparentize($pageBackgroundColor, .1), transparentize($pageBackgroundColor, .1)), url(../images/titanicquarter-services.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}

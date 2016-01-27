@@ -1,0 +1,39 @@
+#apartment-info {
+  .container {
+    columns: 2;
+    column-gap: 3em;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.apartment {
+  margin-top:0;
+  &:before {
+    display: block;
+    height: 50vh;
+    content: ' ';
+  }
+}
+
+#services ul {
+  list-style: none;
+
+  columns: 2;
+  column-gap: 3em;
+
+  li:before {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    content: ' ';
+    background-image: url(../images/checked.svg);
+    margin-right:1em;
+  }
+}
+
+@import "booking";
+@import "map";
+@import "titanicquarter";

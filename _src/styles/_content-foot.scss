@@ -1,0 +1,14 @@
+.content-foot {
+  padding: $padding * 4 0;
+
+  > .container {
+    display: flex;
+    justify-content: space-between;
+
+    > * {
+      flex-basis: 48%;
+      padding: $padding * 3;
+      background: darken($pageBackgroundColor, 5%);
+    }
+  }
+}
