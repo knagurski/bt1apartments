@@ -1,0 +1,21 @@
+{% include images.svg %}
+
+<header class="page-header">
+
+    <div class="container">
+        <a class="logo" href="{{ site.baseurl }}/"><svg><use xlink:href="#bt1apartments" /></svg></a>
+
+        <nav class="site-nav">
+            <ul>
+                <li>
+                    <a href="{{ '/apartments/' | prepend: site.baseurl }}">Belfast Apartments</a>
+                    {% include apartments-nav.html %}
+                </li>
+                <li><a href="{{ '/aboutbelfast' | prepend: site.baseurl }}">About Belfast</a></li>
+                <li><a href="{{ '/rates/' | prepend: site.baseurl }}">Rates</a></li>
+                <li><a href="{{ '/reputation/' | prepend: site.baseurl }}">Reputation</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>

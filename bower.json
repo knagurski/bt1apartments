@@ -1,11 +1,9 @@
 {
   "name": "bt1apartments",
   "description": "BT1 Apartments",
-  "main": "public/index.html",
   "authors": [
     "Kevin Nagurski <knagurski@gmail.com>"
   ],
-  "license": "ISC",
   "homepage": "https://github.com/knagurski/bt1apartments",
   "moduleType": [],
   "private": true,
@@ -18,6 +16,7 @@
   ],
   "devDependencies": {
     "modernizr": "~3.2.0",
-    "normalize-strings": "normalize#~1.0.4"
+    "bower": "*",
+    "normalize-scss": "~3.0.3"
   }
 }

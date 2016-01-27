@@ -1,0 +1,7 @@
+<nav class="apartments-navigation">
+    {% for apartment in site.pages %}
+    {% if apartment.layout == 'apartment' %}
+    <a href="{{ apartment.url | prepend: site.baseurl }}" title="{{ apartment.summary | escape}}">{{ apartment.linkTitle | escape }}</a>
+    {% endif %}
+    {% endfor %}
+</nav>

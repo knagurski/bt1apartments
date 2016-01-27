@@ -1,0 +1,22 @@
+---
+layout: page
+linkTitle: Apartments
+title: Belfast City Centre Apartments
+permalink: /apartments/
+---
+
+{% for apartment in site.pages %}
+{% if apartment.layout == 'apartment' %}
+<section class="apartments-apartment" id="{{ apartment.permalink | remove: '/'}}">
+    <div class="container">
+        <h3>{{ apartment.title | escape}}</h3>
+        <div class="price">Starts from <span>&pound;{{ apartment.price }}</span></div>
+        <p>{{ apartment.summary }}</p>
+        <div class="links">
+            <a href="{{ apartment.url | prepend: site.baseurl }}">More information</a>
+            <a href="{{ apartment.url | prepend: site.baseurl }}#booking">Check availability</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endfor %}

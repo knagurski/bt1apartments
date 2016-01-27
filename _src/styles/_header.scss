@@ -1,0 +1,61 @@
+.page-header {
+
+  border-bottom: 2px solid transparentize(darken($pageBackgroundColor, 10%), .05);
+
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  width: 100vw;
+  background: transparentize($pageBackgroundColor, .05);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .logo > svg {
+    width: 165px;
+    height: 95px;
+  }
+
+  .site-nav {
+    color: white;
+    display: inline-block;
+
+    a {
+      display: block;
+      padding: .5em;
+      color: white;
+      text-decoration: none;
+    }
+
+    li {
+      position: relative;
+      display: inline-block;
+      background-color: transparentize($pageBackgroundColor, 1);
+
+      transition: background-color $transitionLength ease-in-out;
+
+      > nav {
+        position: absolute;
+        top: -999em;
+        opacity: 0;
+        background-color: darken($pageBackgroundColor, 10%);
+
+        transition: opacity $transitionLength ease-in-out;
+      }
+
+      &:hover {
+        background-color: darken($pageBackgroundColor, 10%);
+
+        > nav {
+          opacity: 1;
+          top: 2em;
+        }
+      }
+    }
+
+  }
+}

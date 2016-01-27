@@ -1,3 +1,2 @@
-bower_components
-node_modules
-.idea
+_site
+.sass-cache

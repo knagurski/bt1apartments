@@ -1,0 +1,56 @@
+.site-footer {
+  color: $textColor;
+  background-color: darken($pageBackgroundColor, 5%);
+
+  h4 {
+    margin: 0 0 .5em;
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+
+  a {
+    color: $textColor;
+    text-decoration: none;
+  }
+
+  > .container {
+    padding: $padding * 3 $padding ;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    > * {
+      flex-grow: 1;
+    }
+  }
+
+  .b-welcome-logo {
+    > svg {
+      width: 90px;
+      height: 100px;
+    }
+    margin-right: $padding * 2;
+  }
+
+  .discoverni-logo {
+    > svg {
+      width: 346px;
+      height: 100px;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-grow: 1.5;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: block;
+    }
+  }
+}
+

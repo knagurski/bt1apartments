@@ -2,7 +2,8 @@
   "name": "bt1apartments",
   "version": "1.0.0",
   "description": "BT1 Apartments",
-  "main": "public/index.html",
+  "main": "",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/knagurski/bt1apartments#readme",
   "devDependencies": {
+    "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
@@ -25,6 +27,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-svg2png": "^0.3.0",
-    "gulp-uglifycss": "^1.0.5",
+    "gulp-svgstore": "^5.0.5",
+    "gulp-uglifycss": "^1.0.5"
   }
 }

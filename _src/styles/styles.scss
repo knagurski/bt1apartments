@@ -1,0 +1,37 @@
+@import "../../bower_components/normalize-scss/_normalize.scss";
+@import "vars";
+@import "layout";
+@import "icons";
+
+html {
+  font-family: $copyFont;
+  background-color: $pageBackgroundColor;
+  line-height: 2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body > svg {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headingFont;
+  margin: $padding 0;
+  line-height:1.1;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.75em;
+}

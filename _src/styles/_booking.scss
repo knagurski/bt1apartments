@@ -1,0 +1,31 @@
+#booking {
+
+  $bg: transparentize(invert($pageBackgroundColor), .9);
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    > * {
+      flex-basis: 60%;
+      margin: $padding 0;
+    }
+
+    label {
+      text-align: right;
+      padding-right: $padding;
+      flex-basis: 40%;
+      white-space: nowrap;
+    }
+
+    input, textarea {
+      color: invert($textColor);
+    }
+
+    button {
+      background-color: $bg;
+      border:0;
+      color: $textColor;
+    }
+  }
+}

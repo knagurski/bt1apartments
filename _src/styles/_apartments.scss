@@ -1,0 +1,49 @@
+.apartments-apartment {
+
+  background-size: cover;
+  background-position: center;
+
+  .links a {
+    padding: $padding/2 $padding;
+    display: inline-block;
+    color: $textColor;
+    text-decoration: none;
+    background-color: transparentize(lighten($pageBackgroundColor, 20%), .1);
+  }
+
+  .price {
+    float: right;
+    padding: $padding;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 100%;
+    color: transparentize($textColor, .33);
+    background: deeppink;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height:1;
+    transform: rotate(15deg);
+    box-shadow: 5px 10px 20px rgba(0,0,0,.5);
+    span {
+      color: $textColor;
+      display: block;
+      font-size: 3em;
+      font-family: $headingFont;
+    }
+  }
+
+  @mixin semiTransBg($imageUrl, $transparency: .3) {
+    background-image: linear-gradient(to right, transparentize($pageBackgroundColor, $transparency), transparentize($pageBackgroundColor, $transparency)), url($imageUrl);
+  }
+
+  &#titanicquarter {
+    @include semiTransBg('../images/titanicquarter-area.jpg');
+  }
+  &#margaritaplaza {
+    @include semiTransBg('../images/margaritaplaza.jpg');
+  }
+  &#jamesclow {
+    @include semiTransBg('../images/jamesclow.jpg');
+  }
+}
