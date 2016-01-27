@@ -393,6 +393,7 @@ th {
   left: 0;
   width: 100%;
   width: 100vw;
+  z-index: 999;
   background: rgba(34, 34, 34, 0.95); }
   .page-header .container {
     display: -webkit-box;
