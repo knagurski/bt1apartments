@@ -1,0 +1,22 @@
+@mixin semiTransBg($imageUrl, $transparency: .2) {
+  background-image: linear-gradient(to right, transparentize($pageBackgroundColor, $transparency), transparentize($pageBackgroundColor, $transparency)), url($imageUrl);
+}
+
+@mixin sectionWhiteLeft($backgroundImage) {
+  background: linear-gradient(to right, transparentize($textColor, .1) 40%, transparentize($textColor, 1) 70%), url($backgroundImage);
+  background-position: left, right;
+  background-size: auto, cover;
+  color: invert($textColor);
+
+  .container {
+    p {
+      width: 50%;
+    }
+  }
+}
+
+@mixin sectionDarkFaded($backgroundImage, $transparency: .2) {
+  @include semiTransBg($backgroundImage, $transparency);
+  background-position: center;
+  background-size: cover;
+}

@@ -3,12 +3,13 @@
 
 {% include head.html %}
 
-<body>
+<body class="{{ page.permalink|remove: '/' }}">
 
 {% include header.html %}
 {{ content }}
 {% include footer.html %}
 
+<script src="{{ "/assets/scripts/bt1.min.js" | prepend: site.baseurl }}"></script>
 </body>
 
 </html>

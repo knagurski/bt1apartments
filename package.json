@@ -19,6 +19,7 @@
   "homepage": "https://github.com/knagurski/bt1apartments#readme",
   "devDependencies": {
     "browser-sync": "^2.10.1",
+    "event-stream": "^3.3.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
@@ -28,6 +29,7 @@
     "gulp-sass": "^2.1.0",
     "gulp-svg2png": "^0.3.0",
     "gulp-svgstore": "^5.0.5",
+    "gulp-uglify": "^1.5.1",
     "gulp-uglifycss": "^1.0.5"
   }
 }

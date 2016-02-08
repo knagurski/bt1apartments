@@ -9,15 +9,6 @@
   }
 }
 
-.apartment {
-  margin-top:0;
-  &:before {
-    display: block;
-    height: 50vh;
-    content: ' ';
-  }
-}
-
 #services ul {
   list-style: none;
 
@@ -36,4 +27,7 @@
 
 @import "booking";
 @import "map";
+@import "ivyhouse";
+@import "margaritaplaza";
+@import "jamesclow";
 @import "titanicquarter";
