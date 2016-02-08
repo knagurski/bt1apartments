@@ -1,3 +1,8 @@
+.apartments article:before {
+  background-image: url(../images/h-w-cranes.jpg);
+  background-position: 0 0%;
+}
+
 .apartments-apartment {
 
   background-size: cover;
@@ -33,10 +38,6 @@
     }
   }
 
-  @mixin semiTransBg($imageUrl, $transparency: .3) {
-    background-image: linear-gradient(to right, transparentize($pageBackgroundColor, $transparency), transparentize($pageBackgroundColor, $transparency)), url($imageUrl);
-  }
-
   &#titanicquarter {
     @include semiTransBg('../images/titanicquarter-area.jpg');
   }
@@ -45,5 +46,8 @@
   }
   &#jamesclow {
     @include semiTransBg('../images/jamesclow.jpg');
+  }
+  &#ivyhouse {
+    @include semiTransBg('../images/ivyhouse.jpg');
   }
 }

@@ -1,6 +1,13 @@
 article {
+  margin-top:105px;
+  &:before {
+    display: block;
+    height: 50vh;
+    content: ' ';
+    background-size: cover;
+    background-position: center center;
+  }
   background-color: $pageBackgroundColor;
-  margin-top: 50vh;
   color: darken($textColor, 10%);
 
   section {
@@ -40,6 +47,7 @@ article {
   padding: $padding 0;
 }
 
+@import "home";
 @import "apartment";
 @import "apartments";
 @import "content-foot";

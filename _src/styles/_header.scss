@@ -22,13 +22,13 @@
   }
 
   .site-nav {
-    color: white;
+    color: $textColor;
     display: inline-block;
 
     a {
       display: block;
       padding: .5em;
-      color: white;
+      color: $textColor;
       text-decoration: none;
     }
 

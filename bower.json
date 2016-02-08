@@ -17,6 +17,7 @@
   "devDependencies": {
     "modernizr": "~3.2.0",
     "bower": "*",
-    "normalize-scss": "~3.0.3"
+    "normalize-scss": "~3.0.3",
+    "flickity": "^1.1.2"
   }
 }
