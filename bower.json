@@ -18,6 +18,7 @@
     "modernizr": "~3.2.0",
     "bower": "*",
     "normalize-scss": "~3.0.3",
-    "flickity": "^1.1.2"
+    "flickity": "^1.1.2",
+    "feature.js": "^1.0.1"
   }
 }

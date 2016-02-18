@@ -530,13 +530,14 @@ th {
 
 .page-header {
   border-bottom: 2px solid rgba(9, 9, 9, 0.95);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  width: 100vw;
   z-index: 999;
   background: rgba(34, 34, 34, 0.95); }
+  .page-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100vw; }
   .page-header .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -554,12 +555,12 @@ th {
     width: 165px;
     height: 95px; }
   .page-header .site-nav {
-    color: white;
+    color: #dddddd;
     display: inline-block; }
     .page-header .site-nav a {
       display: block;
       padding: .5em;
-      color: white;
+      color: #dddddd;
       text-decoration: none; }
     .page-header .site-nav li {
       position: relative;
@@ -581,15 +582,8 @@ th {
           top: 2em; }
 
 article {
-  margin-top: 105px;
   background-color: #222;
-  color: #e6e6e6; }
-  article:before {
-    display: block;
-    height: 50vh;
-    content: ' ';
-    background-size: cover;
-    background-position: center center; }
+  color: #c4c4c4; }
   article section {
     padding: 40px 0;
     background-image: -webkit-linear-gradient(bottom, #212121, rgba(34, 34, 34, 0) 20px);
@@ -623,12 +617,24 @@ article {
           background-color: #1d1d1d;
           -webkit-transition: background-color 0.1s ease-in-out;
           transition: background-color 0.1s ease-in-out;
-          color: white; }
+          color: #dddddd; }
           article header .container nav a:hover {
             background-color: #090909; }
 
 .sub-section {
   padding: 10px 0; }
+
+.cta, .gallery {
+  height: -webkit-calc(50vh - 50px);
+  height: calc(50vh - 50px);
+  overflow: hidden; }
+  .cta .cell, .gallery .cell {
+    height: 100%;
+    width: auto;
+    width: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-position: center center; }
 
 .cta {
   height: 50vh; }
@@ -640,8 +646,8 @@ blockquote {
   padding: 1em;
   font-size: 1.35em;
   line-height: 1.2;
-  border-left: 1em solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.02); }
+  border-left: 1em solid rgba(221, 221, 221, 0.1);
+  background-color: rgba(221, 221, 221, 0.02); }
   blockquote cite {
     margin-top: 1em;
     display: block;
@@ -702,11 +708,11 @@ blockquote {
             flex-basis: 40%;
     white-space: nowrap; }
   #booking form input, #booking form textarea {
-    color: black; }
+    color: #222222; }
   #booking form button {
     background-color: rgba(221, 221, 221, 0.1);
     border: 0;
-    color: white; }
+    color: #dddddd; }
 
 #map {
   display: -webkit-box;
@@ -724,15 +730,12 @@ blockquote {
         -ms-flex: 1;
             flex: 1; }
 
-.ivyhouse article:before {
-  background-image: url(../images/ivyhouse.jpg); }
-
 .ivyhouse #area {
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/ivyhouse-area.jpg");
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/ivyhouse-area.jpg");
+  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/ivyhouse-area.jpg");
+  background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/ivyhouse-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
-  color: black; }
+  color: #222222; }
   .ivyhouse #area .container p {
     width: 50%; }
 
@@ -746,11 +749,11 @@ blockquote {
   background-image: url(../images/margaritaplaza.jpg); }
 
 .margaritaplaza #area {
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/margaritaplaza-area.jpg");
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/margaritaplaza-area.jpg");
+  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/margaritaplaza-area.jpg");
+  background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/margaritaplaza-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
-  color: black; }
+  color: #222222; }
   .margaritaplaza #area .container p {
     width: 50%; }
 
@@ -764,11 +767,11 @@ blockquote {
   background-image: url(../images/jamesclow.jpg); }
 
 .jamesclow #area {
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/jamesclow-area.jpg");
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/jamesclow-area.jpg");
+  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/jamesclow-area.jpg");
+  background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/jamesclow-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
-  color: black; }
+  color: #222222; }
   .jamesclow #area .container p {
     width: 50%; }
 
@@ -782,11 +785,11 @@ blockquote {
   background-image: url(../images/titanicquarter.jpg); }
 
 .titanicquarter #area {
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/titanicquarter-area.jpg");
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 70%), url("../images/titanicquarter-area.jpg");
+  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/titanicquarter-area.jpg");
+  background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/titanicquarter-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
-  color: black; }
+  color: #222222; }
   .titanicquarter #area .container p {
     width: 50%; }
 
@@ -806,7 +809,7 @@ blockquote {
   .apartments-apartment .links a {
     padding: 5px 10px;
     display: inline-block;
-    color: white;
+    color: #dddddd;
     text-decoration: none;
     background-color: rgba(85, 85, 85, 0.9); }
   .apartments-apartment .price {
@@ -816,7 +819,7 @@ blockquote {
     height: 100px;
     text-align: center;
     border-radius: 100%;
-    color: rgba(255, 255, 255, 0.67);
+    color: rgba(221, 221, 221, 0.67);
     background: deeppink;
     font-size: 15px;
     text-transform: uppercase;
@@ -826,7 +829,7 @@ blockquote {
             transform: rotate(15deg);
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5); }
     .apartments-apartment .price span {
-      color: white;
+      color: #dddddd;
       display: block;
       font-size: 3em;
       font-family: "Halant", serif; }
@@ -862,14 +865,14 @@ blockquote {
       background: #151515; }
 
 .site-footer {
-  color: white;
+  color: #dddddd;
   background-color: #151515; }
   .site-footer h4 {
     margin: 0 0 .5em;
     font-size: 1.5em;
     font-weight: 300; }
   .site-footer a {
-    color: white;
+    color: #dddddd;
     text-decoration: none; }
   .site-footer > .container {
     padding: 30px 10px;

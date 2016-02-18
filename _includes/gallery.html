@@ -1,0 +1,8 @@
+<div class="gallery js-flickity"
+     data-flickity-options='{ "imagesLoaded": true, "lazyLoad": true, "percentPosition": false }'>
+    {% for image in page.galleryImages %}
+    <div class="cell cell-with-bg" style="background-image: url({{ image | prepend: '/assets/images/' | prepend: site.baseurl }})">
+
+    </div>
+    {% endfor %}
+</div>

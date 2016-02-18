@@ -5423,4 +5423,9 @@ return Flickity;
 }));
 
 
-console.log('we have a ignition');
+if (window.jQuery) {
+    var $header = $('body > header');
+
+    $header.next().css({marginTop: $header.height()});
+    $header.addClass('fixed');
+}
