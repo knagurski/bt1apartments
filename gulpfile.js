@@ -32,6 +32,7 @@ var paths = {
     js: {
         src: [
             'bower_components/flickity/dist/flickity.pkgd.js',
+            'bower_components/feature.js/feature.js',
             '_src/scripts/gallery.js'
         ],
         dest: 'assets/scripts',

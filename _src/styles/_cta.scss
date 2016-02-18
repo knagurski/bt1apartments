@@ -1,0 +1,13 @@
+.cta, .gallery {
+  height: calc(50vh - 50px);
+  overflow: hidden;
+
+  .cell {
+    height: 100%;
+    width: auto;
+    width: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-position: center center;
+  }
+}

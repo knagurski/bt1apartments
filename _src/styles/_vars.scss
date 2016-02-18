@@ -9,6 +9,6 @@ $breakpointLarge: 1200px;
 $headingFont: 'Halant', serif;
 $copyFont: 'Open Sans', sans-serif;
 
-$textColor: white;
+$textColor: invert($pageBackgroundColor);
 
 $transitionLength: .1s;

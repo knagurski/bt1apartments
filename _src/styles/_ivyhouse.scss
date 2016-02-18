@@ -1,8 +1,4 @@
 .ivyhouse {
-  article:before {
-    background-image: url(../images/ivyhouse.jpg);
-  }
-
   #area {
     @include sectionWhiteLeft('../images/ivyhouse-area.jpg');
   }
