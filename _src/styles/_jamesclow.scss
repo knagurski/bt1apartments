@@ -1,8 +1,4 @@
 .jamesclow {
-  article:before {
-    background-image: url(../images/jamesclow.jpg);
-  }
-
   #area {
     @include sectionWhiteLeft('../images/jamesclow-area.jpg');
   }

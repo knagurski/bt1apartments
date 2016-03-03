@@ -1,0 +1,27 @@
+.gallery {
+  height: calc(50vh - 50px);
+  min-height: 250px;
+  overflow: hidden;
+
+  .cell {
+    height: 100%;
+    width: auto;
+    width: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapper {
+    max-width:500px;
+    padding: 1em;
+    margin: 1em;
+    background-color: transparentize(invert($pageBackgroundColor), .2);
+  }
+}
