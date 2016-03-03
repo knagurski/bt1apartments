@@ -1,8 +1,4 @@
 .margaritaplaza {
-  article:before {
-    background-image: url(../images/margaritaplaza.jpg);
-  }
-
   #area {
     @include sectionWhiteLeft('../images/margaritaplaza-area.jpg');
   }
