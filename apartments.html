@@ -12,9 +12,9 @@ permalink: /apartments/
         <h3>{{ apartment.title | escape}}</h3>
         <div class="price">Starts from <span>&pound;{{ apartment.price }}</span></div>
         <p>{{ apartment.summary }}</p>
-        <div class="links">
-            <a href="{{ apartment.url | prepend: site.baseurl }}">More information</a>
-            <a href="{{ apartment.url | prepend: site.baseurl }}#booking">Check availability</a>
+        <div>
+            <a href="{{ apartment.url | prepend: site.baseurl }}" class="button">More information</a>
+            <a href="{{ apartment.url | prepend: site.baseurl }}#booking" class="button">Check availability</a>
         </div>
     </div>
 </section>

@@ -1,8 +1,4 @@
 .titanicquarter {
-  article:before {
-    background-image: url(../images/titanicquarter.jpg);
-  }
-
   #area {
     @include sectionWhiteLeft('../images/titanicquarter-area.jpg');
   }

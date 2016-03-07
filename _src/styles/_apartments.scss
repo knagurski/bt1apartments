@@ -1,20 +1,7 @@
-.apartments article:before {
-  background-image: url(../images/h-w-cranes.jpg);
-  background-position: 0 0%;
-}
-
 .apartments-apartment {
 
   background-size: cover;
   background-position: center;
-
-  .links a {
-    padding: $padding/2 $padding;
-    display: inline-block;
-    color: $textColor;
-    text-decoration: none;
-    background-color: transparentize(lighten($pageBackgroundColor, 20%), .1);
-  }
 
   .price {
     float: right;
@@ -24,7 +11,7 @@
     text-align: center;
     border-radius: 100%;
     color: transparentize($textColor, .33);
-    background: deeppink;
+    background: $highlightColor;
     font-size: 15px;
     text-transform: uppercase;
     line-height:1;
