@@ -24,34 +24,30 @@
   }
 
   .site-nav {
-    color: $textColor;
     display: inline-block;
 
     a {
       display: block;
-      padding: .5em;
-      color: $textColor;
-      text-decoration: none;
+      text-align: left;
     }
 
     li {
       position: relative;
       display: inline-block;
-      background-color: transparentize($pageBackgroundColor, 1);
-
+      background-color: transparentize($highlightColor, 1);
       transition: background-color $transitionLength ease-in-out;
 
       > nav {
         position: absolute;
         top: -999em;
         opacity: 0;
-        background-color: darken($pageBackgroundColor, 10%);
+        background-color: $highlightColor;
 
         transition: opacity $transitionLength ease-in-out;
       }
 
       &:hover {
-        background-color: darken($pageBackgroundColor, 10%);
+        background-color: $highlightColor;
 
         > nav {
           opacity: 1;
