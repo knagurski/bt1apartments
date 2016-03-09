@@ -6,7 +6,7 @@
     justify-content: space-between;
 
     > * {
-      flex-basis: 48%;
+      width: calc(50% - 1em);
       padding: $padding * 3;
       background: darken($pageBackgroundColor, 5%);
     }
