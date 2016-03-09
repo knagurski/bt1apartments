@@ -1,0 +1,44 @@
+.aboutbelfast {
+  .beyond-belfast {
+    @include sectionWhiteLeft('../images/about-belfast-dark-hedges.jpg');
+    background-position: bottom;
+  }
+
+  .city-hall-scaffolding {
+    background-image: url(../images/about-belfast-city-hall-scaffolding.jpg);
+  }
+
+  .brochures {
+    @include sectionDarkFaded('../images/about-belfast-tall-ships.jpg');
+  }
+
+  .videos {
+    iframe {
+      height: 345px;
+    }
+  }
+
+  .brochures .cols {
+    flex-wrap: wrap;
+    li {
+      width: calc(25% - 1em);
+    }
+    a {
+      display: block;
+      background-color: darken($pageBackgroundColor, 5%);
+      color: $textColor;
+      text-decoration: none;
+      padding: $padding * 3;
+      text-align: center;
+    }
+    .caption {
+      display: block;
+      font-size: .8em;
+    }
+    img {
+      background: $textColor;
+      width: 100px;
+      height: 141px;
+    }
+  }
+}

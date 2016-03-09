@@ -23,6 +23,17 @@
   }
 }
 
+.cols {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.cols {
+  list-style: none;
+}
+
 @import "header";
 @import "content";
 @import "footer";

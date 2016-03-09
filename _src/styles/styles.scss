@@ -1,6 +1,8 @@
 @import "../../bower_components/normalize-scss/_normalize.scss";
 @import "vars";
 @import "mixins";
+@import "button";
+@import "images";
 @import "layout";
 @import "icons";
 
@@ -35,22 +37,4 @@ h3 {
 
 h4 {
   font-size: 1.75em;
-}
-
-.button {
-  display: inline-block;
-  background-color: $highlightColor;
-  padding: 3px 10px;
-  color: $textColor;
-  border:0;
-  border-bottom: 3px solid darken($highlightColor, 10%);
-  text-decoration: none;
-  border-radius: 3px;
-  transition: all $transitionLength ease-in-out;
-  text-align: center;
-
-  &:hover {
-    background-color: lighten($highlightColor, 5%);
-    border-bottom-color: darken($highlightColor, 5%);
-  }
 }
