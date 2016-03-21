@@ -510,6 +510,27 @@ td,
 th {
   padding: 0; }
 
+.button {
+  display: inline-block;
+  background-color: #4b6a90;
+  padding: 3px 10px;
+  color: #dddddd;
+  border: 0;
+  border-bottom: 3px solid #3a516e;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  text-align: center; }
+  .button:hover {
+    background-color: #5476a1;
+    border-bottom-color: #425e7f; }
+
+.full-width-image {
+  height: 50vh;
+  background: no-repeat center center;
+  background-size: cover; }
+
 .container {
   padding: 0 10px; }
 
@@ -527,6 +548,21 @@ th {
   .container {
     width: 1200px;
     margin: 0 auto; } }
+
+.cols {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+ul.cols {
+  list-style: none; }
 
 .page-header {
   border-bottom: 2px solid rgba(9, 9, 9, 0.95);
@@ -852,6 +888,48 @@ blockquote {
     background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/ivyhouse.jpg");
     background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/ivyhouse.jpg"); }
 
+.aboutbelfast .beyond-belfast {
+  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/about-belfast-dark-hedges.jpg");
+  background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/about-belfast-dark-hedges.jpg");
+  background-position: left, right;
+  background-size: auto, cover;
+  color: #222222;
+  background-position: bottom; }
+  .aboutbelfast .beyond-belfast .container p {
+    width: 50%; }
+
+.aboutbelfast .city-hall-scaffolding {
+  background-image: url(../images/about-belfast-city-hall-scaffolding.jpg); }
+
+.aboutbelfast .brochures {
+  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/about-belfast-tall-ships.jpg");
+  background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/about-belfast-tall-ships.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.aboutbelfast .videos iframe {
+  height: 345px; }
+
+.aboutbelfast .brochures .cols {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .aboutbelfast .brochures .cols a {
+    width: -webkit-calc(25% - 1em);
+    width: calc(25% - 1em);
+    min-width: 160px;
+    display: block;
+    background-color: #1a1a1a;
+    color: #dddddd;
+    text-decoration: none;
+    padding: 30px;
+    text-align: center; }
+  .aboutbelfast .brochures .cols img {
+    box-shadow: 0 2px 10px black; }
+  .aboutbelfast .brochures .cols .caption {
+    display: block;
+    font-size: .8em; }
+
 .content-foot {
   padding: 40px 0; }
   .content-foot > .container {
@@ -864,9 +942,8 @@ blockquote {
         -ms-flex-pack: justify;
             justify-content: space-between; }
     .content-foot > .container > * {
-      -webkit-flex-basis: 48%;
-          -ms-flex-preferred-size: 48%;
-              flex-basis: 48%;
+      width: -webkit-calc(50% - 1em);
+      width: calc(50% - 1em);
       padding: 30px;
       background: #151515; }
 
@@ -935,7 +1012,8 @@ blockquote {
 .icon {
   width: 15px;
   height: 15px;
-  margin-right: .25em; }
+  margin-right: .25em;
+  fill: #dddddd; }
 
 html {
   font-family: "Open Sans", sans-serif;
@@ -962,19 +1040,3 @@ h3 {
 
 h4 {
   font-size: 1.75em; }
-
-.button {
-  display: inline-block;
-  background-color: #4b6a90;
-  padding: 3px 10px;
-  color: #dddddd;
-  border: 0;
-  border-bottom: 3px solid #3a516e;
-  text-decoration: none;
-  border-radius: 3px;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-  text-align: center; }
-  .button:hover {
-    background-color: #5476a1;
-    border-bottom-color: #425e7f; }
