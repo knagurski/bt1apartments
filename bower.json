@@ -19,6 +19,7 @@
     "bower": "*",
     "normalize-scss": "~3.0.3",
     "flickity": "^1.1.2",
-    "feature.js": "^1.0.1"
+    "feature.js": "^1.0.1",
+    "flatpickr": "flatpickr-calendar#^1.8.9"
   }
 }

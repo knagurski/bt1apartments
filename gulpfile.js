@@ -18,7 +18,10 @@ var paths = {
         src: '_src/styles/styles.scss',
         dest: 'assets/styles',
         watch: '_src/styles/**/*.scss',
-        vendor: 'bower_components/flickity/dist/flickity.css'
+        vendor: [
+            'bower_components/flickity/dist/flickity.css',
+            'bower_components/flatpickr/dist/flatpickr.dark.min.css'
+        ]
     },
     images: {
         src: '_src/images/**/*.{jpg,gif,png,svg}',
@@ -32,8 +35,9 @@ var paths = {
     js: {
         src: [
             'bower_components/flickity/dist/flickity.pkgd.js',
-            'bower_components/feature.js/feature.js',
-            '_src/scripts/gallery.js'
+            'bower_components/flatpickr/dist/flatpickr.min.js',
+            '_src/scripts/gallery.js',
+            '_src/scripts/booking.js'
         ],
         dest: 'assets/scripts',
         watch: '_src/scripts/**/*.js'
