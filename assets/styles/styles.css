@@ -539,6 +539,12 @@ th {
     width: auto;
     margin: 0; } }
 
+@media only screen and (max-width: 1200px) {
+  body article header .container {
+    display: block; }
+    body article header .container nav {
+      margin-left: 0; } }
+
 @media only screen and (min-width: 960px) {
   .container {
     width: 960px;
