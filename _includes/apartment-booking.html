@@ -1,27 +1,31 @@
 <section id="booking">
     <h3>Booking</h3>
-    <form>
-        <label for="">Check in date</label>
-        <input type="date">
+    <form action="https://formspree.io/enquiry@bt1apartments.co.uk" method="post" class="booking-form">
+        <label for="Checkin">Check in date</label>
+        <input name="Checkin" type="date" required="required" data-mindate="tomorrow">
 
-        <label for="">Check out date</label>
-        <input type="date">
+        <label for="Checkout">Check out date</label>
+        <input name="Checkout" type="date" required="required" data-mindate="tomorrow">
 
-        <label for="">Number of guests</label>
-        <input type="number">
+        <label for="Guests">Number of guests</label>
+        <input name="Guests" type="number" min="1">
 
-        <label for="">Email address</label>
-        <input type="email">
+        <label for="Email">Email address</label>
+        <input name="Email" type="email" required="required">
 
-        <label for="">Name</label>
-        <input type="text">
+        <label for="Name">Name</label>
+        <input name="Name" type="text" required="required">
 
-        <label for="">Telephone</label>
-        <input type="tel">
+        <label for="Telephone">Telephone</label>
+        <input name="Telephone" type="tel">
 
-        <label for="">Message</label>
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+        <label for="Message">Message</label>
+        <textarea name="Message" cols="30" rows="5" required="required"></textarea>
+
+        <input type="hidden" name="_subject" value="Booking query">
+        <input type="text" name="_gotcha" style="display:none">
 
         <button class="button">Check availability</button>
+
     </form>
 </section>

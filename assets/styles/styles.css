@@ -140,6 +140,7 @@ http://flickity.metafizzy.co
   opacity: 1;
 }
 
+.flatpickr-input,.flatpickr-wrapper input{z-index:1;cursor:pointer}.flatpickr-wrapper{position:absolute;display:block}.flatpickr-wrapper.inline,.flatpickr-wrapper.static{display:block;position:relative}.flatpickr-wrapper.inline .flatpickr-calendar{position:relative}.flatpickr-wrapper.static .flatpickr-calendar{position:absolute}.flatpickr-wrapper.inline .flatpickr-calendar,.flatpickr-wrapper.open .flatpickr-calendar{z-index:99999;display:block}.flatpickr-calendar{background:#323a45;border:1px solid #2d343e;font-size:90%;border-radius:3px;position:absolute;top:100%;left:0;margin-top:3px;display:none;width:256px}.flatpickr-calendar.hasWeeks{width:288px}.flatpickr-calendar.hasWeeks .flatpickr-weekdays span{width:12.5%}.flatpickr-calendar:after,.flatpickr-calendar:before{position:absolute;display:block;pointer-events:none;border:solid transparent;content:'';height:0;width:0;bottom:100%;left:22px}.flatpickr-calendar:before{border-width:5px;margin:0 -5px;border-bottom-color:#2d343e}.flatpickr-calendar:after{border-width:4px;margin:0 -4px;border-bottom-color:#323a45}.flatpickr-month{background:0 0;color:#fff;padding:4px 5px 2px;text-align:center;position:relative}.flatpickr-next-month,.flatpickr-prev-month{text-decoration:none;cursor:pointer;position:absolute;top:.5rem}.flatpickr-next-month i,.flatpickr-prev-month i{position:relative}.flatpickr-next-month:hover,.flatpickr-prev-month:hover{color:#ff6b66}.flatpickr-prev-month{float:left;left:.5rem}.flatpickr-next-month{float:right;right:.5rem}.flatpickr-current-month{font-size:135%;font-weight:300;color:rgba(255,255,255,.7);display:inline-block}.flatpickr-current-month .cur_month{font-weight:700;color:#fff}.flatpickr-current-month .cur_year{background:0 0;box-sizing:content-box;color:inherit;cursor:default;padding:0 0 0 2px;margin:0;width:3.1em;display:inline;font-size:inherit;font-weight:300;line-height:inherit;height:initial;border:0}.flatpickr-current-month .cur_year:hover{background:rgba(0,0,0,.05)}.flatpickr-weekdays{font-size:90%;background:0 0;padding:2px 0 4px;text-align:center}.flatpickr-weekdays span{color:#fff;opacity:.54;text-align:center;display:inline-block;width:14.28%;font-weight:700}.flatpickr-weeks{width:32px;float:left}.flatpickr-days{padding-top:1px;outline:0}.flatpickr-day{background:0 0;border:1px solid transparent;border-radius:150px;box-sizing:border-box;color:rgba(255,255,255,.9);cursor:pointer;display:inline-block;font-weight:300;width:34px;height:34px;line-height:33px;margin:0 1px 1px;text-align:center}.flatpickr-day.selected,.flatpickr-day.selected:focus,.flatpickr-day.selected:hover,.flatpickr-day.today:focus,.flatpickr-day.today:hover{color:#fff;background:#ff6b66;border-color:#ff6b66}.flatpickr-day:focus,.flatpickr-day:hover{outline:0;background:#4f5b6d;border-color:#4f5b6d}.flatpickr-day.today{border-color:#ff6b66}.flatpickr-day.disabled,.flatpickr-day.disabled:hover{color:rgba(255,255,255,.3);background:0 0;border-color:transparent;cursor:default}.flatpickr-am-pm,.flatpickr-time input[type=number],.flatpickr-time-separator{height:38px;display:inline-block;line-height:38px;color:rgba(255,255,255,.9)}.flatpickr-time{overflow:auto;text-align:center;border-top:0;outline:0}.flatpickr-time input[type=number]{background:0 0;-webkit-appearance:none;-moz-appearance:textfield;box-shadow:none;border:0;border-radius:0;width:33%;min-width:33%;text-align:center;margin:0;padding:0;cursor:pointer;font-weight:700}.flatpickr-am-pm:focus,.flatpickr-am-pm:hover,.flatpickr-time input[type=number]:focus,.flatpickr-time input[type=number]:hover{background:#586579}.flatpickr-time input[type=number].flatpickr-minute{width:26%;font-weight:300}.flatpickr-time input[type=number].flatpickr-second{font-weight:300}.flatpickr-time input[type=number]:focus{outline:0;border:0}.flatpickr-time.has-seconds input[type=number]{width:25%;min-width:25%}.flatpickr-days+.flatpickr-time{border-top:1px solid #2d343e}.flatpickr-am-pm{outline:0;width:21%;padding:0 2%;cursor:pointer;text-align:left;font-weight:300}
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -519,7 +520,6 @@ th {
   border-bottom: 3px solid #3a516e;
   text-decoration: none;
   border-radius: 3px;
-  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   text-align: center; }
   .button:hover {
@@ -552,11 +552,9 @@ th {
 .cols {
   padding: 0;
   margin: 0;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
@@ -575,15 +573,12 @@ ul.cols {
     width: 100%;
     width: 100vw; }
   .page-header .container {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: end;
     -webkit-align-items: flex-end;
         -ms-flex-align: end;
             align-items: flex-end; }
@@ -599,14 +594,12 @@ ul.cols {
       position: relative;
       display: inline-block;
       background-color: rgba(75, 106, 144, 0);
-      -webkit-transition: background-color 0.1s ease-in-out;
       transition: background-color 0.1s ease-in-out; }
       .page-header .site-nav li > nav {
         position: absolute;
         top: -999em;
         opacity: 0;
         background-color: #4b6a90;
-        -webkit-transition: opacity 0.1s ease-in-out;
         transition: opacity 0.1s ease-in-out; }
       .page-header .site-nav li:hover {
         background-color: #4b6a90; }
@@ -619,26 +612,21 @@ article {
   color: #c4c4c4; }
   article section {
     padding: 40px 0;
-    background-image: -webkit-linear-gradient(bottom, #212121, rgba(34, 34, 34, 0) 20px);
     background-image: linear-gradient(to top, #212121, rgba(34, 34, 34, 0) 20px); }
   article header {
     margin-top: 2em; }
     article header .container {
-      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between;
-      -webkit-box-align: center;
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
       article header .container nav {
         margin-left: 10px;
-        display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex; }
@@ -648,7 +636,6 @@ article {
           display: block;
           padding: .25em .75em;
           background-color: #1d1d1d;
-          -webkit-transition: background-color 0.1s ease-in-out;
           transition: background-color 0.1s ease-in-out;
           color: #dddddd; }
           article header .container nav a:hover {
@@ -658,7 +645,6 @@ article {
   padding: 10px 0; }
 
 .gallery {
-  height: -webkit-calc(50vh - 50px);
   height: calc(50vh - 50px);
   min-height: 250px;
   overflow: hidden; }
@@ -669,16 +655,13 @@ article {
     width: 100vw;
     background-size: cover;
     background-position: center center;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
   .gallery .container {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
@@ -706,19 +689,16 @@ blockquote {
     font-size: .7em; }
 
 .quotes {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
   .quotes blockquote {
-    width: -webkit-calc(50% - .5em);
     width: calc(50% - .5em); }
 
 #apartment-info .container {
@@ -748,51 +728,89 @@ blockquote {
     background-image: url(../images/checked.svg);
     margin-right: 1em; }
 
-#booking form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
-  #booking form > * {
-    -webkit-flex-basis: 60%;
-        -ms-flex-preferred-size: 60%;
-            flex-basis: 60%;
-    margin: 10px 0; }
-  #booking form label {
-    text-align: right;
-    padding-right: 10px;
-    -webkit-flex-basis: 40%;
-        -ms-flex-preferred-size: 40%;
-            flex-basis: 40%;
-    white-space: nowrap; }
-  #booking form input, #booking form textarea {
-    color: #222222; }
+#booking {
+  position: relative; }
+  #booking .booking-form {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+    #booking .booking-form > * {
+      -webkit-flex-basis: 60%;
+          -ms-flex-preferred-size: 60%;
+              flex-basis: 60%;
+      margin: 10px 0; }
+    #booking .booking-form label {
+      text-align: right;
+      padding-right: 10px;
+      -webkit-flex-basis: 40%;
+          -ms-flex-preferred-size: 40%;
+              flex-basis: 40%;
+      white-space: nowrap; }
+    #booking .booking-form input, #booking .booking-form textarea {
+      color: #222222; }
+    #booking .booking-form input, #booking .booking-form textarea {
+      opacity: 1;
+      transition: opacity .5s ease-in-out; }
+    #booking .booking-form button {
+      position: relative; }
+    #booking .booking-form.sending input, #booking .booking-form.sending textarea {
+      opacity: .5; }
+    #booking .booking-form.sending button:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 1em;
+      top: 50%;
+      margin-top: -.5em;
+      width: 1em;
+      height: 1em;
+      border: 1px solid white;
+      border-radius: 50%;
+      border-right-color: transparent;
+      -webkit-animation-name: spinnerRotate;
+              animation-name: spinnerRotate;
+      -webkit-animation-duration: .5s;
+              animation-duration: .5s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
+
+@-webkit-keyframes spinnerRotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spinnerRotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 #map {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
   #map iframe {
-    -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1; }
 
 .ivyhouse #area {
-  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/ivyhouse-area.jpg");
   background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/ivyhouse-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
@@ -801,13 +819,11 @@ blockquote {
     width: 50%; }
 
 .ivyhouse #services {
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/ivyhouse-services.jpg");
   background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/ivyhouse-services.jpg");
   background-position: center;
   background-size: cover; }
 
 .margaritaplaza #area {
-  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/margaritaplaza-area.jpg");
   background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/margaritaplaza-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
@@ -816,13 +832,11 @@ blockquote {
     width: 50%; }
 
 .margaritaplaza #services {
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/margaritaplaza-services.jpg");
   background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/margaritaplaza-services.jpg");
   background-position: center;
   background-size: cover; }
 
 .jamesclow #area {
-  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/jamesclow-area.jpg");
   background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/jamesclow-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
@@ -831,13 +845,11 @@ blockquote {
     width: 50%; }
 
 .jamesclow #services {
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/jamesclow-services.jpg");
   background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/jamesclow-services.jpg");
   background-position: center;
   background-size: cover; }
 
 .titanicquarter #area {
-  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/titanicquarter-area.jpg");
   background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/titanicquarter-area.jpg");
   background-position: left, right;
   background-size: auto, cover;
@@ -846,7 +858,6 @@ blockquote {
     width: 50%; }
 
 .titanicquarter #services {
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/titanicquarter-services.jpg");
   background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/titanicquarter-services.jpg");
   background-position: center;
   background-size: cover; }
@@ -876,20 +887,15 @@ blockquote {
       font-size: 3em;
       font-family: "Halant", serif; }
   .apartments-apartment#titanicquarter {
-    background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/titanicquarter-area.jpg");
     background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/titanicquarter-area.jpg"); }
   .apartments-apartment#margaritaplaza {
-    background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/margaritaplaza.jpg");
     background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/margaritaplaza.jpg"); }
   .apartments-apartment#jamesclow {
-    background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/jamesclow.jpg");
     background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/jamesclow.jpg"); }
   .apartments-apartment#ivyhouse {
-    background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/ivyhouse.jpg");
     background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/ivyhouse.jpg"); }
 
 .aboutbelfast .beyond-belfast {
-  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/about-belfast-dark-hedges.jpg");
   background: linear-gradient(to right, rgba(221, 221, 221, 0.9) 40%, rgba(221, 221, 221, 0) 70%), url("../images/about-belfast-dark-hedges.jpg");
   background-position: left, right;
   background-size: auto, cover;
@@ -902,7 +908,6 @@ blockquote {
   background-image: url(../images/about-belfast-city-hall-scaffolding.jpg); }
 
 .aboutbelfast .brochures {
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/about-belfast-tall-ships.jpg");
   background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/about-belfast-tall-ships.jpg");
   background-position: center;
   background-size: cover; }
@@ -915,7 +920,6 @@ blockquote {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
   .aboutbelfast .brochures .cols a {
-    width: -webkit-calc(25% - 1em);
     width: calc(25% - 1em);
     min-width: 160px;
     display: block;
@@ -933,16 +937,13 @@ blockquote {
 .content-foot {
   padding: 40px 0; }
   .content-foot > .container {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
     .content-foot > .container > * {
-      width: -webkit-calc(50% - 1em);
       width: calc(50% - 1em);
       padding: 30px;
       background: #151515; }
@@ -959,21 +960,16 @@ blockquote {
     text-decoration: none; }
   .site-footer > .container {
     padding: 30px 10px;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
     -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse; }
     .site-footer > .container > * {
-      -webkit-box-flex: 1;
       -webkit-flex-grow: 1;
           -ms-flex-positive: 1;
               flex-grow: 1; }
@@ -986,20 +982,15 @@ blockquote {
     width: 346px;
     height: 100px; }
   .site-footer .contact-info {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 1.5;
     -webkit-flex-grow: 1.5;
         -ms-flex-positive: 1.5;
             flex-grow: 1.5;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
     -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
@@ -1040,3 +1031,6 @@ h3 {
 
 h4 {
   font-size: 1.75em; }
+
+.hidden {
+  display: none; }
