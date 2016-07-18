@@ -10,7 +10,7 @@ permalink: /apartments/
 <section class="apartments-apartment" id="{{ apartment.permalink | remove: '/'}}">
     <div class="container">
         <h3>{{ apartment.title | escape}}</h3>
-        <div class="price">Starts from <span>&pound;{{ apartment.price }}</span></div>
+        <div class="price">Starts from <span>&pound;{{ apartment.price }}<abbr title="per night">pn</abbr></span></div>
         <p>{{ apartment.summary }}</p>
         <div>
             <a href="{{ apartment.url | prepend: site.baseurl }}" class="button">More information</a>

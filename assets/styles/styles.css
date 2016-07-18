@@ -872,10 +872,11 @@ blockquote {
   background-size: cover;
   background-position: center; }
   .apartments-apartment .price {
+    box-sizing: content-box;
     float: right;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
+    padding: 20px 10px 0px;
+    width: 92px;
+    height: 92px;
     text-align: center;
     border-radius: 100%;
     color: rgba(221, 221, 221, 0.67);
@@ -892,6 +893,10 @@ blockquote {
       display: block;
       font-size: 3em;
       font-family: "Halant", serif; }
+    .apartments-apartment .price abbr {
+      font-size: .3em;
+      text-transform: lowercase;
+      border-bottom: none; }
   .apartments-apartment#titanicquarter {
     background-image: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../images/titanicquarter-area.jpg"); }
   .apartments-apartment#margaritaplaza {
