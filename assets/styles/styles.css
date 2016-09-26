@@ -963,6 +963,9 @@ blockquote {
   margin-top: 0;
   box-shadow: 0 2px 10px black; }
 
+.rates .gallery .cell {
+  background-position-y: bottom; }
+
 .content-foot {
   padding: 40px 0; }
   .content-foot > .container {
