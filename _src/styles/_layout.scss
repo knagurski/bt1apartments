@@ -3,9 +3,81 @@
 }
 // small only
 @media only screen and (max-width: $breakpointMedium) {
-  .container {
-    width: auto;
-    margin: 0;
+  body {
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    .gallery {
+      margin-top: 0 !important;
+    }
+
+    .quotes {
+      display: block;
+      blockquote {
+        width: auto;
+      }
+    }
+
+    .page-header.fixed {
+      position: relative;
+      width: auto;
+    }
+
+    .container {
+      width: auto;
+      margin: 0;
+      padding: 0 2em;
+    }
+
+    #apartment-navigation {
+      display: none;
+    }
+
+    .site-footer {
+      > .container {
+        flex-direction: column;
+        padding: 2em;
+
+        > a svg {
+          width: auto;
+        }
+      }
+      .contact-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 1em;
+
+        .social {;
+          h4 {
+            display: none;
+          }
+          ul {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+
+    .content-foot > .container {
+      display: block;
+
+      > * {
+        width: auto;
+        margin: 2em 0;
+        padding: 0;
+        background: none;
+      }
+    }
+
+    #booking .booking-form {
+      > * {
+        flex-basis: 100%;
+        text-align: left;
+      }
+    }
   }
 }
 
@@ -24,6 +96,11 @@
   .container {
     width: $breakpointMedium;
     margin: 0 auto;
+  }
+
+  #services ul, #apartment-info .container {
+    columns: 2;
+    column-gap: 3em;
   }
 }
 
