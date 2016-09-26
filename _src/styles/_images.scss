@@ -3,3 +3,15 @@
   background: no-repeat center center;
   background-size: cover;
 }
+
+.photo-right {
+  float: right;
+  margin: $padding * 2;
+  margin-right: 0;
+}
+
+.photo-left {
+  float: left;
+  margin: $padding * 2;
+  margin-left: 0;
+}

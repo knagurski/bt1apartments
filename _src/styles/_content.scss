@@ -3,6 +3,7 @@ article {
   color: darken($textColor, 10%);
 
   section {
+    overflow: hidden;
     padding: $padding * 4 0;
     background-image: linear-gradient(to top, darken($pageBackgroundColor, .5%), transparentize($pageBackgroundColor, 1) 20px);
   }
@@ -44,4 +45,5 @@ article {
 @import "apartment";
 @import "apartments";
 @import "about-belfast";
+@import "reputation";
 @import "content-foot";
