@@ -879,6 +879,9 @@ blockquote {
   background-position: center;
   background-size: cover; }
 
+.apartments .gallery .cell {
+  background-position-y: top; }
+
 .apartments-apartment {
   background-size: cover;
   background-position: center; }
