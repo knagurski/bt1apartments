@@ -1,8 +1,4 @@
 #apartment-info {
-  .container {
-    columns: 2;
-    column-gap: 3em;
-  }
 
   p {
     margin-top: 0;
@@ -10,18 +6,22 @@
 }
 
 #services ul {
+  padding-left: 0;
   list-style: none;
 
-  columns: 2;
-  column-gap: 3em;
-
-  li:before {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    content: ' ';
-    background-image: url(../images/checked.svg);
-    margin-right:1em;
+  li {
+    margin-left: 30px;
+    margin-left: calc(15px + 1em);
+    text-indent: -30px;
+    text-indent: calc(-15px - 1em);
+    &:before {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      content: ' ';
+      background-image: url(../images/checked.svg);
+      margin-right: 1em;
+    }
   }
 }
 
