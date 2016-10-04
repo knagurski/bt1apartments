@@ -4,12 +4,10 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     svg2png      = require('gulp-svg2png'),
     svgStore     = require('gulp-svgstore'),
-    modulizr     = require('gulp-modulizr'),
     rename       = require('gulp-rename'),
     uglifyCss    = require('gulp-uglifyCss'),
     uglify       = require('gulp-uglify'),
     sass         = require('gulp-sass'),
-    browserSync  = require('browser-sync'),
     es           = require('event-stream'),
     cp           = require('child_process');
 
@@ -30,7 +28,7 @@ var paths = {
         watch: '_src/images/**/*.{jpg,gif,png,svg}'
     },
     content: {
-        watch: ['*.md', '*.html', '_includes/*', '_layouts/*']
+        watch: ['./*.md', './*.html', '_includes/*', '_layouts/*']
     },
     js: {
         src: [
@@ -64,8 +62,7 @@ gulp.task('styles', function () {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglifyCss())
         .pipe(gulp.dest('_site/' + paths.styles.dest))
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(gulp.dest(paths.styles.dest));
 });
 
 gulp.task('images', ['images-svg', 'svg-sprite'], function () {
@@ -92,28 +89,19 @@ gulp.task('jekyll-build', ['styles', 'images', 'js'], function (done) {
             .on('close', done);
 });
 
-gulp.task('jekyll-rebuild', ['jekyll-build'], function(){
-    browserSync.reload();
-});
-
-gulp.task('browser-sync', ['jekyll-build'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site',
-            browser: 'google chrome'
-        }
-    });
-});
-
 function processImages(src) {
     return src.pipe(imagemin())
         .pipe(gulp.dest(paths.images.dest));
 }
 
-gulp.task('default', ['browser-sync', 'watch']);
-gulp.task('watch', function () {
+gulp.task('default', ['jekyll-build']);
+gulp.task('watch', ['default'], function () {
     gulp.watch(paths.styles.watch, ['styles']);
     gulp.watch(paths.images.watch, ['images']);
     gulp.watch(paths.js.watch, ['js']);
     gulp.watch(paths.content.watch, ['jekyll-rebuild']);
+});
+
+gulp.task('serve', ['watch'], function(){
+    return cp.spawn('jekyll', ['serve'], {stdio: 'inherit'});
 });
