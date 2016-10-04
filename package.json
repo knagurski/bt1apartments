@@ -18,13 +18,11 @@
   },
   "homepage": "https://github.com/knagurski/bt1apartments#readme",
   "devDependencies": {
-    "browser-sync": "^2.10.1",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.4.0",
-    "gulp-modulizr": "0.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-svg2png": "^0.3.0",
