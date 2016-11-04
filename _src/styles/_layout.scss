@@ -39,6 +39,7 @@
       > .container {
         flex-direction: column;
         padding: 2em;
+        text-align: center;
 
         > a svg {
           width: auto;
@@ -75,6 +76,15 @@
     #booking .booking-form {
       > * {
         flex-basis: 100%;
+        text-align: left;
+      }
+    }
+  }
+
+  #booking {
+    form.booking-form {
+      justify-content: flex-start;
+      label {
         text-align: left;
       }
     }
