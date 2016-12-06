@@ -8,7 +8,10 @@ var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     sass         = require('gulp-sass'),
     es           = require('event-stream'),
-    cp           = require('child_process');
+    cp           = require('child_process'),
+    realFavicon  = require('gulp-real-favicon'),
+    fs           = require('fs'),
+    sequence     = require('gulp-sequence');
 
 var paths = {
     styles: {
@@ -22,7 +25,7 @@ var paths = {
     },
     images: {
         src: '_src/images/**/*.{jpg,gif,png,svg}',
-        srcSvg: '_src/images/**/*.svg',
+        srcSvg: ['!_src/images/favicon.svg', '_src/images/**/*.svg'],
         dest: 'assets/images',
         watch: '_src/images/**/*.{jpg,gif,png,svg}'
     },
@@ -84,6 +87,85 @@ function processImages(src) {
     return src.pipe(imagemin())
         .pipe(gulp.dest(paths.images.dest));
 }
+
+// Generate the icons. This task takes a few seconds to complete.
+// You should run it at least once to create the icons. Then,
+// you should run it whenever RealFaviconGenerator updates its
+// package (see the check-for-favicon-update task below).
+gulp.task('generate-favicon', function(done) {
+	realFavicon.generateFavicon({
+		masterPicture: '_src/images/favicon.svg',
+		dest: './',
+		iconsPath: '/',
+		design: {
+			ios: {
+				pictureAspect: 'backgroundAndMargin',
+				backgroundColor: '#4b6a90',
+				margin: '4%',
+				assets: {
+					ios6AndPriorIcons: false,
+					ios7AndLaterIcons: false,
+					precomposedIcons: false,
+					declareOnlyDefaultIcon: true
+				}
+			},
+			desktopBrowser: {},
+			windows: {
+				pictureAspect: 'noChange',
+				backgroundColor: '#4b6a90',
+				onConflict: 'override',
+				assets: {
+					windows80Ie10Tile: false,
+					windows10Ie11EdgeTiles: {
+						small: false,
+						medium: true,
+						big: false,
+						rectangle: false
+					}
+				}
+			},
+			androidChrome: {
+				pictureAspect: 'backgroundAndMargin',
+				margin: '0%',
+				backgroundColor: '#ffffff',
+				themeColor: '#ffffff',
+				manifest: {
+					name: 'BT One',
+					display: 'standalone',
+					orientation: 'notSet',
+					onConflict: 'override',
+					declared: true
+				},
+				assets: {
+					legacyIcon: false,
+					lowResolutionIcons: false
+				}
+			},
+			safariPinnedTab: {
+				pictureAspect: 'silhouette',
+				themeColor: '#ffffff'
+			}
+		},
+		settings: {
+			scalingAlgorithm: 'Mitchell',
+			errorOnImageTooSmall: false
+		},
+		markupFile: 'faviconData.json'
+	}, function() {
+		done();
+	});
+});
+
+// Inject the favicon markups in your HTML pages. You should run
+// this task whenever you modify a page. You can keep this task
+// as is or refactor your existing HTML pipeline.
+gulp.task('inject-favicon-markups', function() {
+	return gulp.src('_includes/head.html')
+		.pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync('faviconData.json')).favicon.html_code))
+		.pipe(gulp.dest('_includes'));
+});
+
+gulp.task('favicons', sequence('generate-favicon', 'inject-favicon-markups'));
 
 gulp.task('default', ['jekyll-build']);
 gulp.task('watch', ['default'], function () {
