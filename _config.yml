@@ -9,9 +9,11 @@
 title: BT1 Apartments
 email: enquiry@bt1apartments.co.uk
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  BT1 Apartments Belfast. With apartments in the heart of Belfast, including
+  Ivy House, James Clow, Margarita Plaza and Titanic Quarter, you can book a
+  serviced apartment from as little as £50 - £90 per night and stay for years or
+  just a few nights. Long term rates are negotiable depending on your budget and
+  we will guarantee to beat any competitor rate in a similar location and facility.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://bt1apartments.co.uk/" # the base hostname & protocol for your site
 
