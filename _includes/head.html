@@ -24,4 +24,11 @@
     <meta name="twitter:title" content="{{site.title}}{% if page.title %} - {{ page.title }}{% endif %}">
     <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:image" content="{{ page.gallery[0].image | prepend: 'assets/images/' | prepend: site.url}}">
+
+    <meta property="og:image" content="{{ page.gallery[0].image | prepend: 'assets/images/' | prepend: site.url}}">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:title" content="{{site.title}}{% if page.title %} - {{ page.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title }}" />
 </head>
