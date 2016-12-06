@@ -2,7 +2,6 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat       = require('gulp-concat'),
     imagemin     = require('gulp-imagemin'),
-    svg2png      = require('gulp-svg2png'),
     svgStore     = require('gulp-svgstore'),
     rename       = require('gulp-rename'),
     uglifyCss    = require('gulp-uglifycss'),
@@ -65,16 +64,8 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(paths.styles.dest));
 });
 
-gulp.task('images', ['images-svg', 'svg-sprite'], function () {
+gulp.task('images', ['svg-sprite'], function () {
     return processImages(gulp.src(paths.images.src));
-        //.pipe(browserSync.reload());
-});
-
-gulp.task('images-svg', function () {
-    return processImages(
-        gulp.src(paths.images.srcSvg)
-            .pipe(svg2png())
-    );
 });
 
 gulp.task('svg-sprite', function(){
