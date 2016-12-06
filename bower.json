@@ -15,11 +15,11 @@
     "tests"
   ],
   "devDependencies": {
-    "modernizr": "~3.2.0",
     "bower": "*",
-    "normalize-scss": "~3.0.3",
-    "flickity": "^1.1.2",
     "feature.js": "^1.0.1",
-    "flatpickr": "flatpickr-calendar#^1.8.9"
+    "flatpickr": "flatpickr-calendar#^1.8.9",
+    "flickity": "^1.1.2",
+    "modernizr": "~3.2.0",
+    "normalize-scss": "~3.0.3"
   }
 }
