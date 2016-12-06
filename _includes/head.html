@@ -18,4 +18,10 @@
     <meta name="msapplication-TileColor" content="#4b6a90">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bt1apartments">
+    <meta name="twitter:title" content="{{site.title}}{% if page.title %} - {{ page.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ page.gallery[0].image | prepend: 'assets/images/' | prepend: site.url}}">
 </head>
