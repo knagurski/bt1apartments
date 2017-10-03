@@ -2,7 +2,7 @@
   display: inline-block;
   background-color: $highlightColor;
   padding: 3px 10px;
-  color: $textColor;
+  color: lighten($textColor, 20%);
   border:0;
   border-bottom: 3px solid darken($highlightColor, 10%);
   text-decoration: none;
