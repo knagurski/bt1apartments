@@ -5,6 +5,7 @@
 @import "images";
 @import "layout";
 @import "icons";
+@import "section";
 
 html {
   font-family: $copyFont;
@@ -16,7 +17,7 @@ html {
   box-sizing: border-box;
 }
 
-body > svg {
+main > svg {
   display: none;
 }
 

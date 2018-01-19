@@ -1,57 +1,46 @@
+@import "vars";
+
 .apartments {
   .gallery {
     .cell {
       background-position-y: top;
     }
   }
-}
-.apartments-apartment {
 
-  background-size: cover;
-  background-position: center;
+  &-apartment {
+    background-size: cover;
+    background-position: center;
 
-  .buttons {
-    clear: both;
-  }
-
-  .price {
-    box-sizing: content-box;
-    float: right;
-    padding: $padding + 10px $padding $padding - 10px;
-    width: 92px;
-    height: 92px;
-    text-align: center;
-    border-radius: 100%;
-    color: transparentize($textColor, .33);
-    background: $highlightColor;
-    font-size: 15px;
-    text-transform: uppercase;
-    line-height:1;
-    transform: rotate(15deg);
-    box-shadow: 5px 10px 20px rgba(0,0,0,.5);
-    span {
-      color: $textColor;
-      display: block;
-      font-size: 3em;
-      font-family: $headingFont;
+    .buttons {
+      clear: both;
     }
-    abbr {
-      font-size: .3em;
-      text-transform: lowercase;
-      border-bottom: none;
-    }
-  }
 
-  &#titanicquarter {
-    @include semiTransBg('../images/titanicquarter-area.jpg');
-  }
-  &#margaritaplaza {
-    @include semiTransBg('../images/margaritaplaza.jpg');
-  }
-  &#jamesclow {
-    @include semiTransBg('../images/jamesclow.jpg');
-  }
-  &#ivyhouse {
-    @include semiTransBg('../images/ivyhouse.jpg');
+    .price {
+      box-sizing: content-box;
+      float: right;
+      padding: $padding + 10px $padding $padding - 10px;
+      width: 92px;
+      height: 92px;
+      text-align: center;
+      border-radius: 100%;
+      color: transparentize($textColor, .33);
+      background: $highlightColor;
+      font-size: 15px;
+      text-transform: uppercase;
+      line-height: 1;
+      transform: rotate(15deg);
+      box-shadow: 5px 10px 20px rgba(0, 0, 0, .5);
+      span {
+        color: $textColor;
+        display: block;
+        font-size: 3em;
+        font-family: $headingFont;
+      }
+      abbr {
+        font-size: .3em;
+        text-transform: lowercase;
+        border-bottom: none;
+      }
+    }
   }
 }

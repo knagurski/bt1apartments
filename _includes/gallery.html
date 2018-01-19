@@ -23,7 +23,9 @@
             </div>
         </div>
         {% endif %}
-        <img class="cell__bg" data-flickity-lazyload="{{ cell.image | prepend: '/assets/images/' | prepend: site.baseurl }}">
+        <img class="cell__bg"
+             data-flickity-lazyload="{{ cell.image | prepend: '/assets/images/' | prepend: site.baseurl }}"
+             alt="{{ cell.imageAlt }}">
     </div>
     {% endfor %}
 </div>

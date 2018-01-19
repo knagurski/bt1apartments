@@ -1,15 +1,8 @@
-.aboutbelfast {
-  .beyond-belfast {
-    @include sectionWhiteLeft('../images/about-belfast-dark-hedges.jpg');
-    background-position: bottom;
-  }
+@import "vars";
 
+.aboutbelfast {
   .city-hall-scaffolding {
     background-image: url(../images/about-belfast-city-hall-scaffolding.jpg);
-  }
-
-  .brochures {
-    @include sectionDarkFaded('../images/about-belfast-tall-ships.jpg');
   }
 
   .videos {
