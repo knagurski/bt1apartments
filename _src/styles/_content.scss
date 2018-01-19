@@ -1,3 +1,5 @@
+@import "vars";
+
 article {
   background-color: $pageBackgroundColor;
   color: darken($textColor, 10%);
@@ -16,7 +18,7 @@ article {
       align-items: center;
 
       nav {
-        margin-left:$padding;
+        margin-left: $padding;
         display: flex;
         a {
           white-space: nowrap;

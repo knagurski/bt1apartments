@@ -1,10 +1,12 @@
+@import "vars";
+
 blockquote {
   font-family: $headingFont;
   font-style: italic;
   margin: 1em 0 0;
   padding: 1em;
   font-size: 1.35em;
-  line-height:1.2;
+  line-height: 1.2;
   border-left: 1em solid transparentize($textColor, .9);
   background-color: transparentize($textColor, .98);
 
@@ -14,7 +16,7 @@ blockquote {
     text-align: right;
     font-family: $copyFont;
     font-style: normal;
-    font-size:.7em;
+    font-size: .7em;
   }
 }
 

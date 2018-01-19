@@ -1,11 +1,13 @@
+@import "vars";
+
 .page-header {
 
   border-bottom: 2px solid transparentize(darken($pageBackgroundColor, 10%), .05);
 
   &.fixed {
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     width: 100vw;
   }
@@ -55,6 +57,5 @@
         }
       }
     }
-
   }
 }

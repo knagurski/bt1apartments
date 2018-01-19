@@ -1,6 +1,5 @@
 @import "../../bower_components/normalize-scss/_normalize.scss";
 @import "vars";
-@import "mixins";
 @import "button";
 @import "images";
 @import "layout";
@@ -24,7 +23,7 @@ main > svg {
 h1, h2, h3, h4, h5, h6 {
   font-family: $headingFont;
   margin: $padding 0;
-  line-height:1.1;
+  line-height: 1.1;
 }
 
 h1 {

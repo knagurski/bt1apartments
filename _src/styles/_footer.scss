@@ -1,3 +1,5 @@
+@import "vars";
+
 .site-footer {
   color: $textColor;
   background-color: darken($pageBackgroundColor, 5%);
@@ -18,7 +20,7 @@
   }
 
   > .container {
-    padding: $padding * 3 $padding ;
+    padding: $padding * 3 $padding;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
@@ -57,4 +59,3 @@
     }
   }
 }
-

@@ -33,7 +33,7 @@
 
     @media screen and (max-width: $breakpointSmall) {
       &:before {
-        background-color: $from;
+        background: $from none;
       }
 
       p {
