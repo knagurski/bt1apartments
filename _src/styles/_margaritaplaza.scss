@@ -1,9 +1,0 @@
-.margaritaplaza {
-  #area {
-    @include sectionWhiteLeft('../images/margaritaplaza-area.jpg');
-  }
-
-  #services {
-    @include sectionDarkFaded('../images/margaritaplaza-services.jpg')
-  }
-}

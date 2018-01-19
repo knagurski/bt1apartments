@@ -1,3 +1,5 @@
+@import "vars";
+
 #booking {
   $bg: transparentize(invert($pageBackgroundColor), .9);
 
@@ -24,10 +26,10 @@
     }
 
     input, textarea {
-      opacity:1;
+      opacity: 1;
       transition: opacity .5s ease-in-out;
     }
-    
+
     button {
       position: relative;
     }
@@ -41,14 +43,14 @@
         content: '';
         display: block;
         position: absolute;
-        left:1em;
+        left: 1em;
         top: 50%;
         margin-top: -.5em;
         width: 1em;
         height: 1em;
-        border:1px solid white;
+        border: 1px solid white;
         border-radius: 50%;
-        border-right-color:transparent;
+        border-right-color: transparent;
         animation-name: spinnerRotate;
         animation-duration: .5s;
         animation-iteration-count: infinite;
@@ -59,10 +61,10 @@
 }
 
 @keyframes spinnerRotate {
-    from{
-      transform:rotate(0deg);
-    }
-    to{
-      transform:rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
