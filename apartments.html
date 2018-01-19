@@ -9,7 +9,9 @@ gallery:
 
 {% for apartment in site.pages %}
 {% if apartment.layout == 'apartment' %}
-<section class="apartments-apartment" id="{{ apartment.permalink | remove: '/'}}">
+<section id="{{ apartment.permalink | remove: '/'}}"
+         class="apartments-apartment section section--dark-faded"
+         data-src="{{ site.baseurl }}/assets/images/{{ apartment.gallery[0].image }}">
     <div class="container">
         <h3>{{ apartment.title | escape}}</h3>
         <div class="price">Starts from <span>&pound;{{ apartment.price }}<abbr title="per night">pn</abbr></span></div>

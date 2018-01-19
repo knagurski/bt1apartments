@@ -37,7 +37,8 @@ var paths = {
             'bower_components/flickity/dist/flickity.pkgd.js',
             'bower_components/flatpickr/dist/flatpickr.min.js',
             '_src/scripts/gallery.js',
-            '_src/scripts/booking.js'
+            '_src/scripts/booking.js',
+            '_src/scripts/images.js'
         ],
         dest: 'assets/scripts',
         watch: '_src/scripts/**/*.js'
@@ -49,7 +50,7 @@ gulp.task('js', function () {
         .pipe(concat('bt1.js'))
         .pipe(gulp.dest(paths.js.dest))
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(paths.js.dest));
 });
 
@@ -172,7 +173,7 @@ gulp.task('watch', ['default'], function () {
     gulp.watch(paths.styles.watch, ['styles']);
     gulp.watch(paths.images.watch, ['images']);
     gulp.watch(paths.js.watch, ['js']);
-    gulp.watch(paths.content.watch, ['jekyll-rebuild']);
+    gulp.watch(paths.content.watch, ['jekyll-build']);
 });
 
 gulp.task('serve', ['watch'], function(){
