@@ -18,17 +18,21 @@
   },
   "homepage": "https://github.com/knagurski/bt1apartments#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "babel-core": "^7.0.0-bridge.0",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.4.0",
-    "gulp-real-favicon": "^0.2.1",
+    "gulp-real-favicon": "^0.2.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-sequence": "^0.4.6",
     "gulp-svgstore": "^5.0.5",
     "gulp-uglify": "^1.5.1",
-    "gulp-uglifycss": "^1.0.5"
+    "gulp-uglifycss": "^1.0.9"
   }
 }
