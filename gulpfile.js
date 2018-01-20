@@ -175,7 +175,7 @@ gulp.task('watch', ['default'], function () {
   gulp.watch(paths.styles.watch, ['styles'])
   gulp.watch(paths.images.watch, ['images'])
   gulp.watch(paths.js.watch, ['js'])
-  gulp.watch(paths.content.watch, ['jekyll-build'])
+//  gulp.watch(paths.content.watch, ['jekyll-build'])
 })
 
 gulp.task('serve', ['watch'], function () {
