@@ -39,7 +39,8 @@ const paths = {
       'bower_components/flatpickr/dist/flatpickr.min.js',
       '_src/scripts/gallery.js',
       '_src/scripts/booking.js',
-      '_src/scripts/images.js'
+      '_src/scripts/images.js',
+      '_src/scripts/maps.js'
     ],
     dest: 'assets/scripts',
     watch: '_src/scripts/**/*.js'
