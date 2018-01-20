@@ -10,7 +10,7 @@ gallery:
 {% for apartment in site.pages %}
 {% if apartment.layout == 'apartment' %}
 <section id="{{ apartment.permalink | remove: '/'}}"
-         class="apartments-apartment section section--dark-faded"
+         class="apartments-apartment section section--dark-faded bg--lazy"
          data-src="{{ site.baseurl }}/assets/images/{{ apartment.gallery[0].image }}">
     <div class="container">
         <h3>{{ apartment.title | escape}}</h3>
