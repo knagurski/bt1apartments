@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const lazyLoadImages = [...document.querySelectorAll('.image--lazy')]
-  const lazyLoadBgs = [...document.querySelectorAll('[data-src]')]
+  const lazyLoadBgs = [...document.querySelectorAll('.bg--lazy')]
 
   if (window.IntersectionObserver) {
     const observer = new IntersectionObserver((entries, observer) => {
