@@ -17,6 +17,34 @@ description: > # this means to ignore newlines until "baseurl:"
   competitor rate in a similar location and facility.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://bt1apartments.co.uk/" # the base hostname & protocol for your site
+productions:
+    - name: Game of Thrones
+      src: /assets/images/productions/gameofthrones.jpg
+      href: https://www.imdb.com/title/tt0944947
+    - name: Robot Overlords
+      src: /assets/images/productions/robotoverlords.jpg
+      href: https://www.imdb.com/title/tt2145829
+    - name: The Lodge
+      src: /assets/images/productions/thelodge.jpg
+      href: https://www.imdb.com/title/tt6176812
+    - name: Morgan
+      src: /assets/images/productions/morgan.jpg
+      href: https://www.imdb.com/title/tt4520364
+    - name: The Lost City of Z
+      src: /assets/images/productions/thelostcityofz.jpg
+      href: https://www.imdb.com/title/tt1212428
+    - name: The Journey
+      src: /assets/images/productions/thejourney.jpg
+      href: https://www.imdb.com/title/tt4826674
+    - name: Krypton
+      src: /assets/images/productions/krypton.jpg
+      href: https://www.imdb.com/title/tt4276624
+    - name: Paula
+      src: /assets/images/productions/paula.jpg
+      href: https://www.imdb.com/title/tt6495880
+    - name: Dave Allen at Peace
+      src: /assets/images/productions/daveallenatpeace.jpg
+      href: https://www.imdb.com/title/tt7912316
 
 # Build settings
 exclude:

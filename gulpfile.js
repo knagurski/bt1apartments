@@ -40,7 +40,8 @@ const paths = {
       '_src/scripts/gallery.js',
       '_src/scripts/booking.js',
       '_src/scripts/images.js',
-      '_src/scripts/maps.js'
+      '_src/scripts/maps.js',
+      '_src/scripts/productions-gallery.js'
     ],
     dest: 'assets/scripts',
     watch: '_src/scripts/**/*.js'
