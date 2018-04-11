@@ -45,6 +45,9 @@ productions:
     - name: Dave Allen at Peace
       src: /assets/images/productions/daveallenatpeace.jpg
       href: https://www.imdb.com/title/tt7912316
+    - name: Come Home
+      src: /assets/images/productions/comehome.jpg
+      href: https://www.imdb.com/title/tt8001146
 
 # Build settings
 exclude:
