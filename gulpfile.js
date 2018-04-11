@@ -89,7 +89,7 @@ gulp.task('jekyll-build', ['styles', 'images', 'js'], function (done) {
 
 function processImages (src) {
   return src
-    .pipe(imagemin())
+    //.pipe(imagemin())
     .pipe(gulp.dest(paths.images.dest))
 }
 
