@@ -8,7 +8,7 @@
                title="{{ production.name }}"
                target="_blank">
                 <img class="image--lazy"
-                     data-src="{{ production.src }}"
+                     data-src="{{ production.src | prepend: '/productions/' | prepend: site.imagePrefix }}"
                      alt="{{ production.name }}">
             </a>
             {% endfor %}
