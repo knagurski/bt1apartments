@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mapFrame.frameBorder = 0
     mapFrame.style.border = 0
     mapFrame.allowFullscreen = true
-    mapFrame.src = placeholder.dataset.src
+    mapFrame.src = $(placeholder).data('src')
 
     placeholder.parentNode.appendChild(mapFrame)
     placeholder.parentNode.removeChild(placeholder)
