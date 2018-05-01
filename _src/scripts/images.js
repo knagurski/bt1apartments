@@ -35,19 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
    * @param {Node} img
    */
   function displayImage (img) {
-    img.classList.remove('image--lazy')
-    if (img.parentNode.classList.contains('image--lazy-wrapper')) {
+    const $img = $(img)
+
+    $img.removeClass('image--lazy')
+    if ($img.parent().is('.image--lazy-wrapper')) {
       img.parentNode.parentNode.replaceChild(img, img.parentNode)
     }
-    img.src = img.dataset.src
-    delete img.dataset.src
+    $img.attr('src', $img.data('src'))
   }
 
   /**
    * @param {Node} el
    */
   function displayBg (el) {
-    el.style.backgroundImage = `url(${el.dataset.src})`
-    delete el.dataset.src
+    el.style.backgroundImage = `url(${$(el).data('src')})`
   }
 }, false)
