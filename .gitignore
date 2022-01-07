@@ -1,7 +1,6 @@
 .sass-cache
 node_modules
 bower_components
-assets
 faviconData.json
 .idea
 .DS_Store
