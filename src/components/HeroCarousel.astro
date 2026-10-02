@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+export interface HeroSlide {
+  image: ImageMetadata;
+  alt: string;
+  title?: string;
+  text?: string;
+  href?: string;
+  linkText?: string;
+}
+
+interface Props {
+  /** unique prefix for slide ids, e.g. "home" */
+  id: string;
+  slides: HeroSlide[];
+}
+
+const { id, slides } = Astro.props;
+const multi = slides.length > 1;
+---
+
+<div class="gallery carousel" data-carousel>
+  <div
+    aria-label="Image gallery"
+    class="carousel__track"
+    role="region"
+    tabindex="0"
+  >
+    {
+      slides.map((slide, i) => (
+        <div class="cell cell-with-bg" id={`${id}-slide-${i}`}>
+          {slide.title && (
+            <div class="container">
+              <div class="wrapper">
+                <h1>{slide.title}</h1>
+                {slide.text && <p>{slide.text}</p>}
+                {slide.href && (
+                  <a class="button" href={slide.href}>
+                    {slide.linkText ?? "More information"}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+          <Image
+            alt={slide.alt}
+            class="cell__bg"
+            fetchpriority={i === 0 ? "high" : undefined}
+            loading={i === 0 ? "eager" : "lazy"}
+            sizes="100vw"
+            src={slide.image}
+            widths={[640, 960, 1280, 1920]}
+          />
+        </div>
+      ))
+    }
+  </div>
+  {
+    multi && (
+      <div class="carousel__nav">
+        <button
+          aria-label="Previous slide"
+          class="carousel__button"
+          data-prev
+          type="button"
+        >
+          &#8249;
+        </button>
+        <ul class="carousel__dots">
+          {slides.map((slide, i) => (
+            <li>
+              <a
+                aria-current={i === 0 ? "true" : undefined}
+                aria-label={`Go to slide ${i + 1}: ${slide.title ?? slide.alt}`}
+                href={`#${id}-slide-${i}`}
+              />
+            </li>
+          ))}
+        </ul>
+        <button
+          aria-label="Next slide"
+          class="carousel__button"
+          data-next
+          type="button"
+        >
+          &#8250;
+        </button>
+      </div>
+    )
+  }
+</div>
+
+<script>
+  // Progressive enhancement: buttons scroll between slides and the active
+  // dot follows. Without JS the dots still work as anchor links.
+  document.querySelectorAll("[data-carousel]").forEach((root) => {
+    if (root instanceof HTMLElement && root.dataset.enhanced) return;
+    if (root instanceof HTMLElement) root.dataset.enhanced = "true";
+    const track = root.querySelector(".carousel__track");
+    if (!(track instanceof HTMLElement)) return;
+    const dots = Array.from(root.querySelectorAll(".carousel__dots a"));
+    const prev = root.querySelector("[data-prev]");
+    const next = root.querySelector("[data-next]");
+    const page = () => track.clientWidth;
+    prev?.addEventListener("click", () =>
+      track.scrollBy({ left: -page(), behavior: "smooth" }),
+    );
+    next?.addEventListener("click", () =>
+      track.scrollBy({ left: page(), behavior: "smooth" }),
+    );
+    const update = () => {
+      const i = Math.round(track.scrollLeft / page());
+      dots.forEach((dot, di) => {
+        if (di === i) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    };
+    track.addEventListener("scroll", update, { passive: true });
+    update();
+  });
+</script>

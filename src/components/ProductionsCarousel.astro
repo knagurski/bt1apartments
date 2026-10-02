@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+export interface Production {
+  href: string;
+  title: string;
+  image: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  items: Production[];
+}
+
+const { items } = Astro.props;
+---
+
+<div
+  aria-label="Featured productions"
+  class="productions__gallery"
+  data-productions
+  role="region"
+  tabindex="0"
+>
+  {
+    items.map((item) => (
+      <a
+        class="productions__gallery-item"
+        href={item.href}
+        rel="noopener noreferrer"
+        target="_blank"
+        title={item.title}
+      >
+        <Image alt={item.alt} loading="lazy" src={item.image} />
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  // Gentle autoplay for the productions strip. Pure enhancement: without JS
+  // it remains a natively scrollable strip. Pauses on hover/focus and stays
+  // off entirely for prefers-reduced-motion.
+  const gallery = document.querySelector("[data-productions]");
+  if (gallery instanceof HTMLElement) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const step = () => {
+      const item = gallery.querySelector(".productions__gallery-item");
+      return item instanceof HTMLElement ? item.offsetWidth + 8 : 300;
+    };
+    let timer: number | undefined;
+    const tick = () => {
+      const atEnd =
+        gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 8;
+      gallery.scrollTo({
+        left: atEnd ? 0 : gallery.scrollLeft + step(),
+        behavior: "smooth",
+      });
+    };
+    const start = () => {
+      if (reduce.matches || timer !== undefined) return;
+      timer = window.setInterval(tick, 3000);
+    };
+    const stop = () => {
+      window.clearInterval(timer);
+      timer = undefined;
+    };
+    gallery.addEventListener("pointerenter", stop);
+    gallery.addEventListener("pointerleave", start);
+    gallery.addEventListener("focusin", stop);
+    gallery.addEventListener("focusout", start);
+    start();
+  }
+</script>

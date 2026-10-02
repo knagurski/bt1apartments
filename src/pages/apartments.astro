@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
+import { Image } from "astro:assets";
+import { properties } from "../data/properties";
+import cranes from "../assets/images/h_w_cranes.jpg";
+import { SITE_DESCRIPTION } from "../data/site";
+---
+
+<Base
+  bodyClass="apartments"
+  description={SITE_DESCRIPTION}
+  ogImage="h_w_cranes.jpg"
+  path="/apartments/"
+  title="BT1 Apartments - Belfast City Centre Serviced Apartments"
+>
+  <HeroCarousel
+    id="apartments"
+    slides={[{ image: cranes, alt: "Harland and Wolff cranes" }]}
+  />
+
+  <article class="page">
+    <header class="header">
+      <div class="container">
+        <h1 class="title">Belfast City Centre Serviced Apartments</h1>
+      </div>
+    </header>
+
+    {
+      properties.map((property) => (
+        <section
+          class="apartments-apartment section section--dark-faded"
+          id={property.slug}
+        >
+          <Image
+            alt=""
+            class="section__bg"
+            loading="lazy"
+            sizes="100vw"
+            src={property.gallery[0].image}
+            widths={[640, 960, 1280, 1920]}
+          />
+          <div class="container">
+            <h2>{property.pageTitle}</h2>
+            <div class="price">
+              Starts from
+              <span>
+                {property.price}
+                <abbr title="per night">pn</abbr>
+              </span>
+            </div>
+            <p>{property.tagline}</p>
+            <div class="buttons">
+              <a class="button" href={`/${property.slug}/`}>
+                More information about {property.name}
+              </a>
+              <a class="button" href={`/${property.slug}/#booking`}>
+                Check availability
+              </a>
+            </div>
+          </div>
+        </section>
+      ))
+    }
+  </article>
+</Base>

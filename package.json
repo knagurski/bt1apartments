@@ -2,22 +2,29 @@
   "name": "bt1apartments",
   "version": "1.0.0",
   "description": "BT1 Apartments",
-  "main": "",
   "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "audit": "node scripts/audit.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://knagurski@github.com/knagurski/bt1apartments.git"
+  "dependencies": {
+    "@fontsource/halant": "^5.1.0",
+    "@fontsource/open-sans": "^5.1.0",
+    "astro": "^7.3.5",
+    "sharp": "^0.35.5"
   },
-  "author": "Kevin Nagurski <knagurski@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/knagurski/bt1apartments/issues"
-  },
-  "homepage": "https://github.com/knagurski/bt1apartments#readme",
   "devDependencies": {
-    "prettier": "^2.8.1"
+    "axe-core": "^4.13.0",
+    "prettier": "^3.3.3",
+    "puppeteer-core": "^25.12.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.35.5": true,
+    "sharp@0.33.5": true
   }
 }

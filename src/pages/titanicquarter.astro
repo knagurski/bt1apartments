@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import ApartmentPage from "../components/ApartmentPage.astro";
+import { properties } from "../data/properties";
+
+const property = properties[2];
+---
+
+<Base
+  description={property.description}
+  ogImage="titanicquarter.jpg"
+  path="/titanicquarter/"
+  title={`BT1 Apartments - ${property.pageTitle}`}
+>
+  <ApartmentPage property={property} />
+</Base>

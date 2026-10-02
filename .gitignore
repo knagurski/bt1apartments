@@ -1,5 +1,7 @@
 .sass-cache
 node_modules
+dist/
+.astro/
 bower_components
 faviconData.json
 .idea

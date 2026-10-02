@@ -1,0 +1,141 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
+import { Image } from "astro:assets";
+import bushmills from "../assets/images/about-belfast-bushmills-inn.jpg";
+import scaffolding from "../assets/images/about-belfast-city-hall-scaffolding.jpg";
+import darkHedges from "../assets/images/about-belfast-dark-hedges.jpg";
+import newcastle from "../assets/images/about-belfast-newcastle.jpg";
+import tallShips from "../assets/images/about-belfast-tall-ships.jpg";
+import { brochures } from "../data/media";
+
+const description =
+  "Our grand city blossomed from very humble beginnings... It started out as a small hamlet with fertile land along the mouth of the Lagan. Soon, marauders and pirates realised our lough was deep and our shores were safe from the north Atlantic storms.";
+---
+
+<Base
+  bodyClass="aboutbelfast"
+  description={description}
+  ogImage="about-belfast-bushmills-inn.jpg"
+  path="/aboutbelfast/"
+  title="BT1 Apartments - About Belfast"
+>
+  <HeroCarousel
+    id="aboutbelfast"
+    slides={[
+      { image: bushmills, alt: "Bushmills Inn" },
+      { image: scaffolding, alt: "Belfast City Hall" },
+      { image: darkHedges, alt: "Dark Hedges" },
+      { image: newcastle, alt: "Newcastle" },
+      { image: tallShips, alt: "Tall ships in Belfast" },
+    ]}
+  />
+
+  <article class="page">
+    <header class="header">
+      <div class="container">
+        <h1 class="title">About Belfast</h1>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="container">
+        <p>
+          Our grand city blossomed from very humble beginnings... It started out
+          as a small hamlet with fertile land along the mouth of the Lagan.
+          Soon, marauders and pirates realised our lough was deep and our shores
+          were safe from the north Atlantic storms. The perfect haven for
+          repairing sea ravaged ships. From these early stages the industrious
+          locals developed a boat building trade. And the rest is our history.
+        </p>
+      </div>
+    </section>
+
+    <div class="full-width-image">
+      <Image
+        alt="Belfast City Hall"
+        loading="lazy"
+        sizes="100vw"
+        src={scaffolding}
+        widths={[640, 960, 1280, 1920]}
+      />
+    </div>
+
+    <section class="so-whats-belfast-like-today">
+      <div class="container">
+        <h2>So what's Belfast like today?</h2>
+        <p>
+          Well, it's packed with history, culture, exciting events, great food,
+          super shopping&hellip; you might even spot a ship or two. You'll also
+          find some of the friendliest people you'll ever meet. Have a look
+          around and learn more about the city we're so proud of.
+        </p>
+      </div>
+      <div class="content-foot videos">
+        <div class="container">
+          <iframe
+            allowfullscreen
+            loading="lazy"
+            src="https://www.youtube.com/embed/Whjcs9FT4gA"
+            title="Belfast video"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="beyond-belfast section section--white-left">
+      <Image
+        alt=""
+        class="section__bg"
+        loading="lazy"
+        sizes="100vw"
+        src={darkHedges}
+        widths={[640, 960, 1280, 1920]}
+      />
+      <div class="container">
+        <h2>Beyond Belfast</h2>
+        <p>The variety of our small country is amazing!!</p>
+        <p>
+          From rolling landscapes and hazy mountains, intriguing towns, and
+          villages to some of the most vibrant, cultural and history rich
+          cities.
+        </p>
+      </div>
+    </section>
+
+    <section class="brochures section section--dark-faded">
+      <Image
+        alt=""
+        class="section__bg"
+        loading="lazy"
+        sizes="100vw"
+        src={tallShips}
+        widths={[640, 960, 1280, 1920]}
+      />
+      <div class="container">
+        <h2>Brochures</h2>
+        <div class="cols">
+          {
+            brochures.map((brochure) => (
+              <a class="brochure" href={brochure.href}>
+                <Image
+                  alt=""
+                  height={141}
+                  loading="lazy"
+                  src={brochure.image}
+                  width={100}
+                />
+                <span class="caption">
+                  <svg class="icon">
+                    <use href="#arrow"></use>
+                  </svg>
+                  {brochure.caption}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

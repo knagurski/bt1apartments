@@ -1,0 +1,79 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
+import { Image } from "astro:assets";
+import cityHall from "../assets/images/belfast-city-hall2.jpg";
+import terry from "../assets/images/terry-profile.jpg";
+import clinton from "../assets/images/clinton.jpg";
+import { SITE_DESCRIPTION } from "../data/site";
+---
+
+<Base
+  bodyClass="reputation"
+  description={SITE_DESCRIPTION}
+  ogImage="belfast-city-hall2.jpg"
+  path="/reputation/"
+  title="BT1 Apartments - Our Reputation"
+>
+  <HeroCarousel id="reputation" slides={[{ image: cityHall, alt: "" }]} />
+
+  <article class="page">
+    <header class="header">
+      <div class="container">
+        <h1 class="title">Our Reputation</h1>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <p>Hi there,</p>
+        <Image
+          alt="Terry Campbell"
+          class="photo-right"
+          loading="lazy"
+          src={terry}
+          width={235}
+        />
+        <p>Welcome to BT1 Apartments. A small family run business but big enough
+        to care.</p>
+        <p>
+          With over 20 years experience in hospitality, tourism, living and
+          working in Belfast there is nothing we don't know about this market.
+          We have a reputation built on core values in customer service, quality
+          apartment facilities and products. After all its your experience that
+          counts so we work hard to ensure everything goes like clockwork.
+        </p>
+        <p>
+          I have worked within the hotel and hospitality sector since an early
+          age and have worked in private country hotels, multinational global
+          hotel players such as Hilton and Intercontinental Hotels. On my career
+          journey I have managed the expectation and needs of... well everyone
+          that you would expect to come through your hotel doors; some more high
+          profile than others.
+        </p>
+        <Image
+          alt="Bill Clinton"
+          class="photo-left"
+          loading="lazy"
+          src={clinton}
+          width={470}
+        />
+        <p>
+          Here at BT1 Apartments we're passionate about what we do and provide
+          you with the support service and assurances the property you select is
+          the right one for you.
+        </p>
+        <p>
+          We cover all the basics and more providing
+          <em
+            >"a place to work, to live, to enjoy, to relax and be part of"</em
+          >.
+        </p>
+        <p>
+          Be confident that BT1 Apartments is the right choice to begin your
+          journey in Belfast.
+        </p>
+      </div>
+    </section>
+  </article>
+</Base>

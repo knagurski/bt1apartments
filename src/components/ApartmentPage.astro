@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import HeroCarousel from "./HeroCarousel.astro";
+import type { Property } from "../data/properties";
+
+interface Props {
+  property: Property;
+}
+
+const { property } = Astro.props;
+const mapSrc = `https://www.google.com/maps/embed/v1/place?q=${encodeURIComponent(property.mapQuery)}&key=AIzaSyAgFinR7mbzrz3Zp4NBUsZaLTj9Ej9DNBw`;
+---
+
+<HeroCarousel
+  id={property.slug}
+  slides={property.gallery.map((slide) => ({
+    image: slide.image,
+    alt: slide.alt,
+  }))}
+/>
+
+<article class="apartment" id={property.slug}>
+  <header class="header">
+    <div class="container">
+      <h1 class="title">{property.pageTitle}</h1>
+      <nav aria-label="On this page" id="apartment-navigation">
+        <a href="#apartment-info">About the apartment</a>
+        <a href="#area">Area</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#map">Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="apartment-info">
+    <div class="container">
+      <p>{property.info}</p>
+    </div>
+  </section>
+
+  <section class="section section--area section--white-left" id="area">
+    <Image
+      alt=""
+      class="section__bg"
+      loading="lazy"
+      sizes="100vw"
+      src={property.areaImage}
+      widths={[640, 960, 1280, 1920]}
+    />
+    <div class="container">
+      <h2>Area</h2>
+      <p>{property.area}</p>
+    </div>
+  </section>
+
+  <section
+    class="section section--services section--dark-faded"
+    id="services"
+  >
+    <Image
+      alt=""
+      class="section__bg"
+      loading="lazy"
+      sizes="100vw"
+      src={property.servicesImage}
+      widths={[640, 960, 1280, 1920]}
+    />
+    <div class="container">
+      <h2>Services</h2>
+      <ul>
+        {property.services.map((service) => <li>{service}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <div class="content-foot">
+    <div class="container">
+      <section id="booking">
+        <h2>Booking</h2>
+        <p>Please enquire with arrival and departure dates via WhatsApp.</p>
+        <a
+          class="button"
+          href="https://wa.me/447821339498"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <svg class="icon">
+            <use href="#whatsapp"></use>
+          </svg>
+          Contact us on WhatsApp</a
+        >
+      </section>
+
+      <section id="map" style="min-height: 600px">
+        <h2>Map</h2>
+        <iframe
+          loading="lazy"
+          src={mapSrc}
+          style="border: 0"
+          title={`Map of ${property.pageTitle}`}
+        ></iframe>
+      </section>
+    </div>
+  </div>
+</article>
