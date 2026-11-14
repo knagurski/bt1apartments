@@ -13,7 +13,7 @@
   "dependencies": {
     "@fontsource/halant": "^5.1.0",
     "@fontsource/open-sans": "^5.1.0",
-    "astro": "^7.3.5",
+    "astro": "^7.4.7",
     "sharp": "^0.35.5"
   },
   "devDependencies": {
